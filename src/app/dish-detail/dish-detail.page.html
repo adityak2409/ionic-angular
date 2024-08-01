@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dishes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ loadedDish?.title }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="OnDelete()">
+       <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="loadedDish">
+  <ion-card>
+    <img [src]="loadedDish.imageUrl" />
+    <ion-card-header>
+      <ion-card-title>{{ loadedDish.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ loadedDish.description }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

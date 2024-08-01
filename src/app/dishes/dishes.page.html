@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dishes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let dish of dishes" [routerLink]="['/dish-detail', dish.id]">
+      <ion-thumbnail slot="start">
+        <img [src]="dish.imageUrl" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ dish.title }}</h2>
+        <p>{{ dish.description }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
